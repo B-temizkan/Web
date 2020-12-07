@@ -1,0 +1,56 @@
+﻿@model IEnumerable<BerkeOdev7.Models.KitapVeri>
+
+@{
+    ViewBag.Title = "Sirala";
+}
+
+<h2>Sirala</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yazar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YayinEvi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BasimYil)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yazar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YayinEvi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fiyat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BasimYil)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.Id  }) |
+            @Html.ActionLink("Sil", "Delete", new {  id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
